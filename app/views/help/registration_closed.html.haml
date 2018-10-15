@@ -1,0 +1,18 @@
+- content_for :page_title do
+  = AppConfig.settings.pod_name + " - " + t('devise.shared.links.sign_up_closed')
+
+.container#login
+  .text-center
+    .logos-asterisk
+    %h1
+      = t('devise.shared.links.sign_up_closed')
+    %h2
+      = t('help.choose_another')
+  .text-center
+    = t('help.closed_pod')
+    = t('help.find_pods')
+    = link_to 'Poduptime', 'https://podupti.me/'
+    = t('help.other_questions')
+    = link_to 'Wiki', 'https://wiki.diasporafoundation.org/Choosing_a_pod'
+
+
