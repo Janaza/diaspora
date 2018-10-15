@@ -27,12 +27,12 @@ describe RegistrationsController, type: :controller do
 
     it "redirects #new to the registration closed page" do
       get :new
-      expect(response).to redirect_to registration_closed_path 
+      expect(response).to redirect_to registration_closed_path
     end
 
     it "redirects #create to the registration closed page" do
       post :create, params: valid_params
-      expect(response).to redirect_to registration_closed_path 
+      expect(response).to redirect_to registration_closed_path
     end
 
     it "does not redirect if there is a valid invite token" do

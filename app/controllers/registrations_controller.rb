@@ -32,12 +32,12 @@ class RegistrationsController < Devise::RegistrationsController
 
   def check_registrations_open_or_valid_invite!
     return true if AppConfig.settings.enable_registrations? || invite.try(:can_be_used?)
- 
+
     if params[:invite]
-	flash[:error] = t("registrations.invalid_invite")
-	redirect_to new_user_session_path
+      flash[:error] = t("registrations.invalid_invite")
+      redirect_to new_user_session_path
     else
-    	redirect_to registration_closed_path
+      redirect_to registration_closed_path
     end
   end
 
